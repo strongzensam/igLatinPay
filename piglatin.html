@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pig Latin</title>
+</head>
+<body>
+	<h1>Pig latin translator</h1>
+	<textarea id="piggified">Was</textarea>
+	<script type="text/javascript">
+		function myFunction() {
+			var pig = document.getElementById("piggified").value;
+			if (pig.charAt(0).toLowerCase() !== "a" && pig.charAt(0).toLowerCase() !== "e" && pig.charAt(0).toLowerCase() !== "i" && pig.charAt(0).toLowerCase() !== "o" && pig.charAt(0).toLowerCase() !== "u") {
+				// || "e" || "i" || "o" || "u"
+				// pig.slice(-1) = pig.slice(0);
+				alert(pig.slice(1) + pig.slice(0,1) + "ay");
+				// document.getElementById('pigged').innerHTML = pig;
+			} else {
+				alert(pig + "ay");
+			}
+		}
+
+	</script>
+	<!-- <script src="piglatin.js"></script> -->
+	<button onclick="myFunction()">anslateTray otay igpay atinlay </button>
+	<p id="pigged"></p>
+</body>
+</html>
