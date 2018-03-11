@@ -9,18 +9,28 @@
 	<script type="text/javascript">
 		function myFunction() {
 			var pig = document.getElementById("piggified").value;
-			if (pig.charAt(0).toLowerCase() !== "a" && pig.charAt(0).toLowerCase() !== "e" && pig.charAt(0).toLowerCase() !== "i" && pig.charAt(0).toLowerCase() !== "o" && pig.charAt(0).toLowerCase() !== "u") {
-				// || "e" || "i" || "o" || "u"
-				// pig.slice(-1) = pig.slice(0);
-				alert(pig.slice(1) + pig.slice(0,1) + "ay");
-				// document.getElementById('pigged').innerHTML = pig;
-			} else {
-				alert(pig + "ay");
+			var capitalize = 0
+			if (pig.charAt(0) === pig.charAt(0).toUpperCase()) {
+				capitalize = 1;
 			}
+			console.log(pig)
+			console.log(capitalize)
+			if (pig.charAt(0).toLowerCase() !== "a" && pig.charAt(0).toLowerCase() !== "e" && pig.charAt(0).toLowerCase() !== "i" && pig.charAt(0).toLowerCase() !== "o" && pig.charAt(0).toLowerCase() !== "u") {
+				pig = (pig.slice(1) + pig.slice(0,1) + "ay");
+			} else {
+				pig = (pig + "ay");
+			}
+			console.log(pig)
+
+			if (capitalize === 1) {
+				pig = pig.charAt(0).toUpperCase() + pig.slice(1).toLowerCase();
+			}
+			alert(pig)
+			console.log(pig)
+
 		}
 
 	</script>
-	<!-- <script src="piglatin.js"></script> -->
 	<button onclick="myFunction()">anslateTray otay igpay atinlay </button>
 	<p id="pigged"></p>
 </body>

@@ -1,0 +1,16 @@
+Here is the pig latin script (ruby or javascript): 
+Step 1. (lower case consonant) Write a function that performs this translation (pig -> igpay) and write a test that validates the function
+
+Step2 .  (lower case vowel) Modify the function to handle this translation (egg -> eggay) and write a test that validates that this and all previous test pass.
+
+Step 3 (uppercase consonant) Modify the function to handle this translation (Hello -> Ellohay) and write a test that validates that this and all previous test pass. 
+
+Step 4. (uppercase vowel) Modify the function to handle this translation (Orange -> Orangeay) and write a test that validates that this and all previous test pass.
+
+Step 5. (multiple consonants)  Modify the function to handle this translation (Struck -> Uckstray) and write a test that validates that this and all previous test pass.
+
+Step 6. (multiple words)  Modify the function to handle this translation (Hello world -> Ellohay orldway) and write a test that validates that this and all previous test pass.
+
+Step 7. (punctuation)  Modify the function to handle this translation (Hello, world. -> Ellohay, orldway.) and write a test that validates that this and all previous test pass.
+
+This will help you with string and array manipulation which are both skills that you will use everyday when building complex javascript applications
