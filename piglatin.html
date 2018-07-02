@@ -5,26 +5,51 @@
 </head>
 <body>
 	<h1>Pig latin translator</h1>
-	<textarea id="piggified">Was</textarea>
+	<textarea id="piggified">Pig Latin</textarea>
 	<script type="text/javascript">
 		function myFunction() {
 			var pig = document.getElementById("piggified").value;
-			var capitalize = 0
-			if (pig.charAt(0) === pig.charAt(0).toUpperCase()) {
-				capitalize = 1;
-			}
-			console.log(pig)
-			for (var i = 0; pig.charAt(0).toLowerCase() !== "a" && pig.charAt(0).toLowerCase() !== "e" && pig.charAt(0).toLowerCase() !== "i" && pig.charAt(0).toLowerCase() !== "o" && pig.charAt(0).toLowerCase() !== "u"; i++) {
-				pig = (pig.slice(1) + pig.slice(0,1));
-			} 
-				console.log(pig)
+			if (pig.length < 2) {
+				alert(pig + " is not enough letters");
+			} else {
+				function latinMe(pigs){
+					// var j = 0;
+					var i = 0;
+					while (pigs[i].charAt(0).toLowerCase() !== "a" && pigs[i].charAt(0).toLowerCase() !== "e" && pigs[i].charAt(0).toLowerCase() !== "i" && pigs[i].charAt(0).toLowerCase() !== "o" && pigs[i].charAt(0).toLowerCase() !== "u") {
+						i+=1;
+						console.log(pigs + " during")
+						console.log(i + " i")
+					};
+					console.log(pigs.slice(i) + pigs.slice(0,i))
+					return(pigs.slice(i) + pigs.slice(0,i))
+				}	
+				var piggies = pig.split(" ")
+				var capitalize = 0
+				if ((piggies[0].charAt(0)) === (piggies[0].charAt(0).toUpperCase())) {
+					capitalize = 1
+				} else {
+					capitalize = 0
+				}
+				console.log(piggies)
 
-			pig = pig + "ay";
-			if (capitalize === 1) {
-				pig = pig.charAt(0).toUpperCase() + pig.slice(1).toLowerCase();
+				console.log(piggies + " before")
+
+
+				f = piggies.map(latinMe)
+				console.log(f + " after")
+				// Rearranges letters within given input
+				g = (f.join("ay ") + "ay")
+				console.log(g)
+				// adds "ay" to each word
+				if (capitalize === 1) {
+					var pigFinal = g.charAt(0).toUpperCase() + g.slice(1).toLowerCase()
+				} else {
+					var pigFinal = g
+				}
+
+				alert(pigFinal)
 			}
-			alert(pig)
-			console.log(pig)
+
 		}
 
 
