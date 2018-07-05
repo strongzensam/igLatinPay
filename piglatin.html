@@ -13,7 +13,6 @@
 				alert(pig + " is not enough letters");
 			} else {
 				function latinMe(pigs){
-					// var j = 0;
 					var i = 0;
 					while (pigs[i].charAt(0).toLowerCase() !== "a" && pigs[i].charAt(0).toLowerCase() !== "e" && pigs[i].charAt(0).toLowerCase() !== "i" && pigs[i].charAt(0).toLowerCase() !== "o" && pigs[i].charAt(0).toLowerCase() !== "u") {
 						i+=1;
@@ -22,7 +21,13 @@
 					};
 					console.log(pigs.slice(i) + pigs.slice(0,i))
 					return(pigs.slice(i) + pigs.slice(0,i))
-				}	
+				}
+				var punctuation = pig.indexOf(",")
+				if (punctuation > 0){
+					pig = pig.slice(0,punctuation) + pig.slice(punctuation + 1)
+					console.log(pig + " pig")
+				}
+				console.log(punctuation + " is index of punctuation")
 				var piggies = pig.split(" ")
 				var capitalize = 0
 				if ((piggies[0].charAt(0)) === (piggies[0].charAt(0).toUpperCase())) {
@@ -41,10 +46,15 @@
 				g = (f.join("ay ") + "ay")
 				console.log(g)
 				// adds "ay" to each word
-				if (capitalize === 1) {
-					var pigFinal = g.charAt(0).toUpperCase() + g.slice(1).toLowerCase()
+				if (punctuation > 0) {
+					h = g.slice(0,punctuation+2) + "," + g.slice(punctuation+2)
 				} else {
-					var pigFinal = g
+					h = g
+				}
+				if (capitalize === 1) {
+					var pigFinal = h.charAt(0).toUpperCase() + h.slice(1).toLowerCase()
+				} else {
+					var pigFinal = h
 				}
 
 				alert(pigFinal)
